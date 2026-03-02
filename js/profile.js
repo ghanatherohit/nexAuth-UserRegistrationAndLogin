@@ -6,8 +6,8 @@
 $(document).ready(function () {
 
   // ── Auth Guard: check localStorage token ──
-  const token = localStorage.getItem('nexauth_token');
-  const userId = localStorage.getItem('nexauth_user_id');
+  const token    = localStorage.getItem('nexauth_token');
+  const userId   = localStorage.getItem('nexauth_user_id');
   const username = localStorage.getItem('nexauth_username');
 
   if (!token || !userId) {
@@ -15,20 +15,26 @@ $(document).ready(function () {
     return;
   }
 
-  // ── Set nav username ──
+  // ── Set nav username (SVG dot — no inline style) ──
   $('#navUsername').prepend(
-    '<i class="fa-solid fa-circle online-dot"></i> ' +
+    '<svg class="online-dot" xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="#68d391"><circle cx="12" cy="12" r="10"></circle></svg> ' +
     (username || 'User') + ' &nbsp;'
   );
+
+  // ── SVG icons for alerts ──
+  const alertIcons = {
+    error:   '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>',
+    success: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>',
+    info:    '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>'
+  };
 
   // ── Alert helpers ──
   function showAlert(type, msg, target) {
     target = target || '#globalAlert';
     const box = $(target);
     box.removeClass('alert-error alert-success alert-info show');
-    const iconMap = { error: 'fa-circle-exclamation', success: 'fa-circle-check', info: 'fa-circle-info' };
     box.addClass('alert-' + type + ' show')
-       .html('<i class="fa-solid ' + iconMap[type] + '"></i> ' + msg);
+       .html(alertIcons[type] + ' ' + msg);
     setTimeout(function () { box.removeClass('show'); }, 4000);
   }
 
@@ -36,7 +42,7 @@ $(document).ready(function () {
   function calculateAge(dob) {
     if (!dob) return '—';
     const birthDate = new Date(dob);
-    const today = new Date();
+    const today     = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
     const m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
@@ -60,7 +66,7 @@ $(document).ready(function () {
     $('#profileUsername').text('@' + (data.username || '—'));
     $('#profileEmail').text(data.email || '—');
     $('#view-joined').text(formatDate(data.created_at));
-    $('#view-role').text(data.role || 'User');
+    $('#view-role').text(data.role || 'Member');
 
     const profile = data.profile || {};
     $('#view-dob').text(formatDate(profile.dob) || '—');
@@ -125,19 +131,19 @@ $(document).ready(function () {
 
   // ── Save profile ──
   $('#saveBtn').on('click', function () {
-    const $btn = $(this);
+    const $btn     = $(this);
     const $btnText = $('#saveBtnText');
     $btn.prop('disabled', true);
     $btnText.html('<span class="spinner me-2"></span>');
 
     const profileData = {
-      dob: $('#edit-dob').val(),
-      gender: $('#edit-gender').val(),
-      contact: $('#edit-contact').val().trim(),
-      city: $('#edit-city').val().trim(),
-      country: $('#edit-country').val().trim(),
+      dob:        $('#edit-dob').val(),
+      gender:     $('#edit-gender').val(),
+      contact:    $('#edit-contact').val().trim(),
+      city:       $('#edit-city').val().trim(),
+      country:    $('#edit-country').val().trim(),
       occupation: $('#edit-occupation').val().trim(),
-      bio: $('#edit-bio').val().trim()
+      bio:        $('#edit-bio').val().trim()
     };
 
     $.ajax({

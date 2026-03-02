@@ -55,7 +55,6 @@ Register → Login → Profile
 nexus/
 ├── assets/
 │   ├── schema.sql          ← MySQL table schema
-│   └── README_SETUP.md     ← Detailed setup guide
 ├── css/
 │   └── style.css           ← All styles (dark glassmorphism theme)
 ├── js/
@@ -185,9 +184,3 @@ http://localhost/nexus
 | Token validation | Every request to profile.php validates token against Redis |
 
 ---
-
-## GitHub
-
-```
-https://github.com/ghanatherohit/nexAuth-UserRegistrationAndLogin
-```

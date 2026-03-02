@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NexAuth — Welcome</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-
 <body>
-  <div class="aurora-bg">
-    <div class="aurora-orb"></div>
-  </div>
+  <div class="aurora-bg"><div class="aurora-orb"></div></div>
 
   <nav class="top-nav">
-    <span class="brand-logo"><i class="fa-solid fa-bolt"></i> NexAuth</span>
+    <span class="brand-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      NexAuth
+    </span>
     <div class="d-flex gap-2">
       <a href="login.html" class="btn-ghost">Sign In</a>
       <a href="register.html" class="btn-aurora btn-nav">Get Started</a>
@@ -24,23 +22,42 @@
   </nav>
 
   <div class="hero-section">
-    <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Secure · Fast · Modern</div>
+    <div class="hero-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      Secure · Fast · Modern
+    </div>
     <h1 class="hero-title">Identity, <span class="gradient-text">reimagined.</span></h1>
     <p class="hero-desc">
       NexAuth is a full-stack authentication system built with PHP, MySQL, MongoDB, and Redis.
       Register once, and your profile is always with you.
     </p>
     <div class="hero-actions">
-      <a href="register.html" class="btn-hero-primary">Create Account <i class="fa-solid fa-arrow-right ms-2"></i></a>
+      <a href="register.html" class="btn-hero-primary">
+        Create Account
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
       <a href="login.html" class="btn-hero-secondary">Sign In</a>
     </div>
     <div class="features-row">
-      <div class="feature-chip"><i class="fa-solid fa-database"></i> MySQL + MongoDB</div>
-      <div class="feature-chip"><i class="fa-solid fa-server"></i> Redis Sessions</div>
-      <div class="feature-chip"><i class="fa-solid fa-lock"></i> Bcrypt Passwords</div>
-      <div class="feature-chip"><i class="fa-solid fa-bolt"></i> jQuery AJAX</div>
+      <div class="feature-chip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+        MySQL + MongoDB
+      </div>
+      <div class="feature-chip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+        Redis Sessions
+      </div>
+      <div class="feature-chip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        Bcrypt Passwords
+      </div>
+      <div class="feature-chip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        jQuery AJAX
+      </div>
     </div>
   </div>
-</body>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</body>
 </html>
