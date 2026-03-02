@@ -2,9 +2,6 @@
 
 A full-stack authentication system built with PHP, MySQL, MongoDB, and Redis.
 
-## Live Demo
-GitHub: https://github.com/ghanatherohit/UserRegistrationAndLogin
-
 ## Tech Stack
 - HTML + Bootstrap 5 + jQuery AJAX
 - PHP 8.2
